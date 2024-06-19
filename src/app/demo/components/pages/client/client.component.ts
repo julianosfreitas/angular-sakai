@@ -12,6 +12,7 @@ export class ClientComponent implements OnInit {
 
     aluno1 = "Juliano";
     aluno2 = "Raphael";
+    aluno3 = "Letícia";
     
     clientDialog: boolean = false;
 
