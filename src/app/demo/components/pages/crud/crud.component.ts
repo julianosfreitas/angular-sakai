@@ -9,7 +9,7 @@ import { ProductService } from './services/product.service';
     providers: [MessageService]
 })
 export class CrudComponent implements OnInit {
-
+     aluno4 = "Luciano";
     productDialog: boolean = false;
 
     deleteProductDialog: boolean = false;
