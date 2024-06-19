@@ -31,7 +31,7 @@
                 <!-- Cabeçalho da tabela -->
                 <ng-template pTemplate="caption">
                     <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
-                        <h5 class="m-0">Manage Products</h5>
+                        <h5 class="m-0">Gerenciar Produtos</h5>
                         <!-- Campo de pesquisa global -->
                         <span class="block mt-2 md:mt-0 p-input-icon-left">
                             <i class="pi pi-search"></i>
@@ -50,9 +50,9 @@
                         <th pSortableColumn="code">Code <p-sortIcon field="code"></p-sortIcon></th>
                         <th pSortableColumn="name">teste <p-sortIcon field="name"></p-sortIcon></th>
                         <th>Image</th>
-                        <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
-                        <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon></th>
-                        <th pSortableColumn="rating">Reviews <p-sortIcon field="rating"></p-sortIcon></th>
+                        <th pSortableColumn="price">Preço<p-sortIcon field="price"></p-sortIcon></th>
+                        <th pSortableColumn="category">Categoria <p-sortIcon field="category"></p-sortIcon></th>
+                        <th pSortableColumn="rating">Review <p-sortIcon field="rating"></p-sortIcon></th>
                         <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
                         <th></th>
                     </tr>
@@ -65,30 +65,30 @@
                             <p-tableCheckbox [value]="product"></p-tableCheckbox>
                         </td>
                         <!-- Coluna de código do produto -->
-                        <td style="width:14%; min-width:10rem;"><span class="p-column-title">Code</span>
+                        <td style="width:14%; min-width:10rem;"><span class="p-column-title">Código</span>
                             {{product.code || product.id}}
                         </td>
                         <!-- Coluna de nome do produto -->
                         <td style="width:14%; min-width:10rem;">
-                            <span class="p-column-title">nome</span>
+                            <span class="p-column-title">Nome</span>
                             {{product.name}}
                         </td>
                         <!-- Coluna de imagem do produto -->
-                        <td style="width:14%; min-width:10rem;"><span class="p-column-title">Image</span>
+                        <td style="width:14%; min-width:10rem;"><span class="p-column-title">Imagem</span>
                             <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.name" width="100" class="shadow-4" />
                         </td>
                         <!-- Coluna de preço do produto -->
                         <td style="width:14%; min-width:8rem;">
-                            <span class="p-column-title">Price</span>
+                            <span class="p-column-title">Preço</span>
                             {{product.price | currency:'USD'}}
                         </td>
                         <!-- Coluna de categoria do produto -->
                         <td style="width:14%; min-width:10rem;">
-                            <span class="p-column-title">Category</span>
+                            <span class="p-column-title">Categoria</span>
                             {{product.category}}
                         </td>
                         <!-- Coluna de avaliações do produto -->
-                        <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Reviews</span>
+                        <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Review</span>
                             <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
                         </td>
                         <!-- Coluna de status do produto -->
@@ -114,18 +114,18 @@
                 <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="150" class="mt-0 mx-auto mb-5 block shadow-2" *ngIf="product.image">
                 <!-- Campo de nome do produto -->
                 <div class="field">
-                    <label for="name">Name</label>
+                    <label for="name">Nome</label>
                     <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus [ngClass]="{'ng-invalid ng-dirty' : submitted && !product.name}"/>
-                    <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Name is required.</small>
+                    <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Nome é Obrigatório</small>
                 </div>
                 <!-- Campo de descrição do produto -->
                 <div class="field">
-                    <label for="description">Description</label>
+                    <label for="description">Descrição</label>
                     <textarea id="description" pInputTextarea [(ngModel)]="product.description" required rows="3" cols="20"></textarea>
                 </div>
                 <!-- Campo de status do inventário -->
                 <div class="field">
-                    <label for="status">Inventory Status</label>
+                    <label for="status">Status do Investário</label>
                     <p-dropdown [(ngModel)]="product.inventoryStatus" inputId="inventoryStatus" optionValue="label" [options]="statuses" placeholder="Select">
                         <ng-template pTemplate="selectedItem">
                             <span *ngIf="product && product.inventoryStatus" [class]="'product-badge status-' + product.inventoryStatus.toString().toLowerCase()">{{product.inventoryStatus}}</span>
