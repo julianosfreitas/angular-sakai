@@ -11,6 +11,7 @@ import { ClientService } from './services/client.service';
 export class ClientComponent implements OnInit {
 
     aluno1 = "Juliano";
+    aluno2 = "Raphael";
     
     clientDialog: boolean = false;
 
