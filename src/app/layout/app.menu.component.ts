@@ -66,7 +66,7 @@ export class AppMenuComponent implements OnInit {
                     },
                     {
                         label: 'Pedido',
-                        icon: 'pi pi-fw pi-list-check',
+                        icon: 'pi pi-fw pi-cart-arrow-down',
                         routerLink: ['/pages/crud']
                     },
                     {
