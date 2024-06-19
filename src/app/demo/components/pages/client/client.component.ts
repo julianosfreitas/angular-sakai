@@ -10,6 +10,8 @@ import { ClientService } from './services/client.service';
 })
 export class ClientComponent implements OnInit {
 
+    aluno1 = "Juliano";
+    
     clientDialog: boolean = false;
 
     deleteClientDialog: boolean = false;
